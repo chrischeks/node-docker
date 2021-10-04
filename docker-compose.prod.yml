@@ -10,7 +10,7 @@ services:
       args:
         NODE_ENV: production
     ports:
-      - "3000:3000"
+      - "4300:3000"
     environment:
       - NODE_ENV=production
       - MONGO_USER=${MONGO_USER}
