@@ -10,7 +10,16 @@ const {
   REDIS_PORT,
   SESSION_SECRET,
 } = require("./config/config");
-
+console.log(
+  MONGO_IP,
+  MONGO_PORT,
+  MONGO_USER,
+  MONGO_PASS,
+  REDIS_URL,
+  REDIS_PORT,
+  SESSION_SECRET,
+  "nnnff"
+);
 const postRouter = require("./routes/postRoute");
 const userRouter = require("./routes/authRoute");
 const app = express();
