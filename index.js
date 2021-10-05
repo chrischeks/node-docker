@@ -28,19 +28,19 @@ const session = require("express-session");
 
 let RedisStore = require("connect-redis")(session);
 let redisClient = redis.createClient({ host: REDIS_URL, port: REDIS_PORT });
-// const connectWithRetry = () => {
-//   mongoose
-//     .connect(
-//       `mongodb://${MONGO_USER}:${MONGO_PASS}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
-//     )
-//     .then(() => console.log("Successfully connected to DB"))
-//     .catch((e) => {
-//       console.log(e);
-//       setTimeout(connectWithRetry, 5000);
-//     });
-// };
+const connectWithRetry = () => {
+  mongoose
+    .connect(
+      `mongodb://${MONGO_USER}:${MONGO_PASS}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
+    )
+    .then(() => console.log("Successfully connected to DB"))
+    .catch((e) => {
+      console.log(e);
+      setTimeout(connectWithRetry, 5000);
+    });
+};
 
-// connectWithRetry();
+connectWithRetry();
 app.use(cors());
 app.enable("trust proxy");
 
