@@ -11,6 +11,7 @@ services:
 
   node-app:
     build: .
+    image: chekwube/node-app
     environment:
       - PORT=4300
     depends_on:
