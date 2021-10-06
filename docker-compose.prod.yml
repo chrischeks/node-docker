@@ -7,10 +7,10 @@ services:
     deploy:
       replicas: 8
       restart_policy:
-        - condition: any
+        condition: any
       update_config:
-        - parallelism: 2
-        - delay: 15s
+        parallelism: 2
+        delay: 15s
     # build: .
     build:
       context: .
